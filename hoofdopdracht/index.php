@@ -22,7 +22,7 @@ $tagline = "We are the watchers on the wall!";
 
 
     <footer>
-        <?= $appNaam, date(" Y")?>
+        <p><?= $appNaam, date(" Y")?></p>
     </footer>   
 </body>
 </html>
