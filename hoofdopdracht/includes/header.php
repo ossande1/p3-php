@@ -7,4 +7,3 @@
     <script src="/script.js" defer></script>
 </head>
 <body>
-    
