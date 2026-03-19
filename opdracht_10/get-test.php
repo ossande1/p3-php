@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" action="verwerk.php">
+    <form method="POST">
     <label for="title">Titel</label>
     <input id="title" name="title" type="text">
     <button type="submit">Opslaan</button>
