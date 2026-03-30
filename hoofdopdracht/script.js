@@ -45,3 +45,8 @@ function end() {
 }
 
 timer = setInterval(end, 1000);
+
+let lenghtin = document.getElementById("naam").value.lenght;
+
+document.getElementById("counter").innerHTML = lenghtin/50;
+
