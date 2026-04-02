@@ -15,7 +15,7 @@ $titel = "Test";
         <input type="text" name="naam" id="naam" require max=50 >
         <input type="submit" value="submit">
         <?php    
-            $naam = trim($_POST['naam'] ?? '');
+            $naam = trim($_GET['naam'] ?? '');
             if (strlen($naam) < 3) {
                 echo "Titel moet minimaal 3 tekens bevatten.";
                 exit;
