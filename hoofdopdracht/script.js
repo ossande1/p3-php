@@ -8,13 +8,10 @@ if(hour < 12){
     document.getElementById("greeting").innerHTML = "Goeden avond"
 };
 
-const element = document.getElementById("darkbtn");
-element.addEventListener("click", dark);
-
-function dark(){
-    document.querySelector(body).style.backgroundColor = "black"
-    document.querySelector(body).style.color = "white"
-};
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
 
 let tijd = 120;
 
@@ -46,7 +43,22 @@ function end() {
 
 timer = setInterval(end, 1000);
 
-let lenghtin = document.getElementById("naam").value.lenght;
+document.getElementById("naam").addEventListener("input", () => {
 
-document.getElementById("counter").innerHTML = lenghtin/50;
+  let lenghtin = document.getElementById("naam").value.length;
+  document.getElementById("counter").innerHTML = lenghtin + "/50";
+
+});
+
+let clickamount;
+
+document.getElementById("footer").addEventListener("click", () =>{
+
+  clickamount + 1;
+  console.log("clickamount")
+  if (clickamount === 3) {
+    alert
+  };
+  
+})
 
