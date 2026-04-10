@@ -17,7 +17,6 @@ $box_with_apps = $apps->fetchAll(PDO::FETCH_ASSOC);
     }
     echo "</ul>";
     ?>
-
     <div>Er zijn nog geen items toegevoegd.</div>
 
 <?php include "../includes/footer.php"; ?>
