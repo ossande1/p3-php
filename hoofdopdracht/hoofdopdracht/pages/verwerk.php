@@ -6,7 +6,7 @@
 
 <?php
 session_start();
-$_SESSION['update'] = "..."
+$_SESSION['update'] = "...";
 if (isset($_SESSION['update'])) {
     echo "<div>" . $_SESSION['update'] . "</div>";
     unset($_SESSION['update']);
