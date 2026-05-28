@@ -23,8 +23,8 @@ $box_with_apps = $apps->fetchAll(PDO::FETCH_ASSOC);
 
     <?php 
         $title = trim($_POST['naam'] ?? '');
-        $stmt = $pdo->prepare("INSERT INTO items (title) VALUES (:title)");
-        $stmt->execute (['title' => $title]);
+        $stmt = $conn->prepare("INSERT INTO apps (titel) VALUES (:title)");
+        $stmt->execute(['titel' => $title]);
         if (isset($_POST['naam'])) {
             echo "Vul het eerst in!";    
         }

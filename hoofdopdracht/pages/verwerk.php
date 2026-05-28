@@ -4,6 +4,15 @@
 
 <?php include "../includes/nav.php"; ?>
 
+<?php
+session_start();
+$_SESSION['update'] = "...";
+if (isset($_SESSION['update'])) {
+    echo "<div>" . $_SESSION['update'] . "</div>";
+    unset($_SESSION['update']);
+}
+?>
+
     <h1>Item succesvol ontvangen</h1>
 
     <?php 
