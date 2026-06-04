@@ -11,12 +11,17 @@ $box_with_apps = $apps->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <?php
+$id = 1;
+?>
+
+<?php
     echo "<ul>";
     foreach ($box_with_apps as $apps) {
     echo "<li>" . $apps['title'] . "</li>";
     }
     echo "</ul>";
     ?>
+    <a href="delete.php?id=<?= $id['id'] ?>">Verwijderen</a>
     <div>Er zijn nog geen items toegevoegd.</div>
 
 <?php include "../includes/footer.php"; ?>

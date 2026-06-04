@@ -14,7 +14,7 @@ try {
   echo "Database connectie mislukt." . $e->getMessage();
 }
 
-$id = $_GET['id'] ?? '';
+$id = $_POST['id'] ?? '';
 echo $id;
 
 $stmt = $conn->prepare("SELECT * FROM apps WHERE id = ?");
@@ -30,13 +30,29 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
     <title>Document</title>
 </head>
 <body>
+  <form action="" method="post">
     <h3>Titel(verplicht)</h3>
-    <input id="naam" name="naam" type="text" value="<?= $item['titel'] ?>" min="3" max="50" required>
+    <input id="naam" name="naam" type="text" value="id" min="3" max="50" required>
+    
     <small id="counter">0/50</small> <br>
     <h3>Categorie</h3>
     <input id="cat" name="cat" type="text"> <br>
     <h3>Date</h3>
     <input id="date" name="date" type="number"> <br>
     <button type="submit">Opslaan</button>
+    <?php
+    $id = $_POST['id'] ?? '';
+    $stmt = $conn->prepare("
+    UPDATE items 
+    SET title = ? 
+    WHERE id = ?
+    ");
+
+    $stmt->execute([$title, $id]);
+
+    header('Location: index.php');
+    exit;
+    ?>
+  </form>
 </body>
 </html>
