@@ -1,0 +1,3 @@
+id-primary key-gebruikt om te rij uniek te maken
+username-varchar-gebruikt om te user te herkennen
+password-varchar-gebruikt om de account te beschermen
