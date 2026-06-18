@@ -22,19 +22,19 @@ $box_with_apps = $apps->fetchAll(PDO::FETCH_ASSOC);
     <button type="submit">Opslaan</button>
 
     <?php 
-        $title = trim($_POST['naam'] ?? '');
-        $stmt = $conn->prepare("INSERT INTO apps (titel) VALUES (:title)");
-        $stmt->execute(['titel' => $title]);
+        $titel = trim($_POST['naam'] ?? '');
+        $stmt = $conn->prepare("INSERT INTO apps (titel) VALUES (:titel)");
+        $stmt->execute(['titel' => $titel]);
         if (isset($_POST['naam'])) {
             echo "Vul het eerst in!";    
         }
-        if (strlen($title) < 3) {
+        if (strlen($titel) < 3) {
                 echo "Titel moet minimaal 3 tekens bevatten.";
                 exit;
-            }else if (strlen($title) > 50) {
+            }else if (strlen($titel) > 50) {
                 echo "Titel mag maximaal 50 tekens bevatten.";
                 exit;
-            }else if (empty($title)) {
+            }else if (empty($titel)) {
                 echo "Naam is verplicht.";
                 exit;
             } else {

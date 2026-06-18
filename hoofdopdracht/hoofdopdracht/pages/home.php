@@ -17,11 +17,10 @@ $id = 1;
 <?php
     echo "<ul>";
     foreach ($box_with_apps as $apps) {
-    echo "<li>" . $apps['title'] . "</li>";
+    echo "<li>" . $apps['titel'] . "</li>";
     }
     echo "</ul>";
     ?>
-    <a href="delete.php?id=<?= $id['id'] ?>">Verwijderen</a>
     <div>Er zijn nog geen items toegevoegd.</div>
 
 <?php include "../includes/footer.php"; ?>

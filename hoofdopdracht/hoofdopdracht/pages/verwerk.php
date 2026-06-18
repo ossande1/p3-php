@@ -19,8 +19,9 @@ if (isset($_SESSION['update'])) {
         $title = $_POST['naam'] ?? '';
         if (isset($_POST['naam'])) {
         echo "Titel: $title <br>";    
-        };
-
+        };?>
+    <a href="delete.php?id=<?= $id['id'] ?>">Verwijderen</a>
+    <?php
         $cat = $_POST['cat'] ?? '';
         if (isset($_POST['cat'])) {
         echo "Categorie: $cat <br>";    
