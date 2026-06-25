@@ -13,7 +13,7 @@ $box_with_apps = $apps->fetchAll(PDO::FETCH_ASSOC);
 <form method="post" action="verwerk.php">
 
     <h3>Titel(verplicht)</h3>
-    <input id="naam" name="naam" type="text" min="3" max="50" required>
+    <input id="naam" name="titel" type="text" min="3" max="50" required>
     <small id="counter">0/50</small> <br>
     <h3>Categorie</h3>
     <input id="cat" name="cat" type="text"> <br>
@@ -22,10 +22,10 @@ $box_with_apps = $apps->fetchAll(PDO::FETCH_ASSOC);
     <button type="submit">Opslaan</button>
 
     <?php 
-        $titel = trim($_POST['naam'] ?? '');
+        $titel = trim($_POST['titel'] ?? '');
         $stmt = $conn->prepare("INSERT INTO apps (titel) VALUES (:titel)");
         $stmt->execute(['titel' => $titel]);
-        if (isset($_POST['naam'])) {
+        if (isset($_POST['titel'])) {
             echo "Vul het eerst in!";    
         }
         if (strlen($titel) < 3) {

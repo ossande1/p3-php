@@ -43,14 +43,14 @@ $item = $stmt->fetch(PDO::FETCH_ASSOC);
     <?php
     $id = $_POST['id'] ?? '';
     $stmt = $conn->prepare("
-    UPDATE items 
-    SET title = ? 
+    UPDATE apps 
+    SET titel = ? 
     WHERE id = ?
     ");
 
-    $stmt->execute([$title, $id]);
+    $stmt->execute([$item, $id]);
 
-    header('Location: index.php');
+    //header('Location: index.php');
     exit;
     ?>
   </form>
