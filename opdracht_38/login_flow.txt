@@ -1,0 +1,4 @@
+1. Gebruiker vult formulier in
+2. php code ziet als het gegevens goed zijn
+3. php kijkt naar het database
+4. Gebruiker krijgt aantwoord
