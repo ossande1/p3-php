@@ -1,9 +1,24 @@
 <?php include "../includes/db.php"; ?>
 
 <?php 
+
+session_start();
+
+$_SESSION['user'] = 'Ossande';
+
+if (isset($_SESSION['user'])) {
+    echo "Ingelogd";
+    header('Location: home.php');
+} else {
+    echo "Niet ingelogd";
+}
+
+
+
 // $apps = $conn->prepare("SELECT * FROM users");
 // $apps->execute();
 // $box_with_apps = $apps->fetchAll(PDO::FETCH_ASSOC);
+
 $username = $_POST['username'] ?? '';
 $password = $_POST['password'] ?? '';
 
@@ -21,11 +36,6 @@ if ($user && password_verify($password, $user['password'])) {
 }else {
     echo 'slecht';
 };
-
-// session_start();
-
-// $_SESSION['users'] = $user['username'];
-
 
 ?>
 
